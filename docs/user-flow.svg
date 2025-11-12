@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <style>
+    .box { fill:#ffffff; stroke:#2b6cb0; stroke-width:2; rx:8; }
+    .text { font-family: Arial, Helvetica, sans-serif; font-size:16px; fill:#111827 }
+    .title { font-size:20px; font-weight:600 }
+    .arrow { stroke:#4a5568; stroke-width:2; fill:none; marker-end:url(#arrowhead) }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a5568" />
+    </marker>
+  </defs>
+
+  <rect x="20" y="10" width="960" height="60" rx="8" fill="#f1f5f9" stroke="#e2e8f0" />
+  <text x="40" y="48" class="text title">User Flow - Mini Kanban (ações principais)</text>
+
+  <!-- steps -->
+  <g transform="translate(40,100)">
+    <rect class="box" x="0" y="0" width="180" height="70" />
+    <text class="text" x="90" y="40" text-anchor="middle">Abrir App</text>
+
+    <rect class="box" x="240" y="0" width="200" height="70" />
+    <text class="text" x="340" y="28" text-anchor="middle">Criar Tarefa</text>
+    <text class="text" x="340" y="48" text-anchor="middle">(título obrigatório)</text>
+
+    <rect class="box" x="520" y="0" width="200" height="70" />
+    <text class="text" x="620" y="28" text-anchor="middle">Editar Tarefa</text>
+    <text class="text" x="620" y="48" text-anchor="middle">(alterar título/descrição)</text>
+
+    <rect class="box" x="240" y="130" width="200" height="70" />
+    <text class="text" x="340" y="165" text-anchor="middle">Mover entre Colunas</text>
+
+    <rect class="box" x="520" y="130" width="200" height="70" />
+    <text class="text" x="620" y="165" text-anchor="middle">Excluir Tarefa</text>
+
+    <!-- arrows horizontal top -->
+    <path class="arrow" d="M180 35 L240 35" />
+    <path class="arrow" d="M440 35 L520 35" />
+
+    <!-- arrow from Criar to Mover -->
+    <path class="arrow" d="M440 70 L440 130" />
+    <path class="arrow" d="M440 130 L440 130" />
+    <path class="arrow" d="M440 130 L440 130 L240 130" />
+
+    <!-- arrow from Editar to Excluir -->
+    <path class="arrow" d="M720 35 L720 130" />
+    <path class="arrow" d="M720 130 L720 130 L720 130" />
+
+    <!-- arrows between move and delete -->
+    <path class="arrow" d="M440 165 L520 165" />
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(40,320)">
+    <text class="text" x="0" y="18">Fluxo resumido: abrir app → criar tarefa → (editar | mover entre colunas) → excluir</text>
+    <text class="text" x="0" y="38">Notas: título obrigatório; status válidos: A Fazer (todo), Em Progresso (in_progress), Concluídas (done)</text>
+  </g>
+</svg>
